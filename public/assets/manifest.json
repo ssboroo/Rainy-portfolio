@@ -1,5 +1,10 @@
 [
   {
+    "path": "/assets/steppe-morin-khuur.mp3",
+    "bytes": 2364678,
+    "type": "audio/mpeg"
+  },
+  {
     "path": "/assets/boulder.glb",
     "bytes": 33420,
     "type": "model/gltf-binary"

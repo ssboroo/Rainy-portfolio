@@ -1,7 +1,10 @@
 # Current site music
 
-User-selected recording: https://www.youtube.com/watch?v=tTsE8dBd5FU
+The Lonely Mongol (Morin khuur solo) Medieval Steppe Music.
+MP3 supplied by the site owner in this conversation, 2026-10-16.
+Saved unchanged as public/assets/steppe-morin-khuur.mp3.
+Reference supplied by the user: https://www.youtube.com/watch?v=tTsE8dBd5FU
 
-Uses the official privacy-enhanced YouTube iframe, created only after a user action (Begin journey or the music button). The player remains visible with native controls and a direct source link. Close or the music toggle removes the iframe and stops playback. One-video loop uses loop=1 and playlist=tTsE8dBd5FU. No media is downloaded, extracted, or redistributed.
+The local MP3 is included in the startup byte manifest and audio readiness gate. Begin journey starts playback from its user click; the music button toggles playback. The audio loops at28% volume. There is no YouTube iframe, popup or external playback dependency. Browser rejection leaves the button off and shows a retry notice.
 
-The former local CC0 throat ambient is no longer played or preloaded. Its asset and historical license remain in the repository. YouTube availability, embed permission and browser autoplay policy remain external dependencies; the visible player and source link provide manual playback.
+No CC0 claim is made for this user-supplied recording. The former CC0 throat ambient remains as a historical asset but is not loaded or played.
