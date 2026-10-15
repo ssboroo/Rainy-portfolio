@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import * as T from 'three';
+import {FBXLoader} from 'three/addons/loaders/FBXLoader.js';
+import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
+import {GLTFExporter} from 'three/addons/exporters/GLTFExporter.js';
+const input=process.argv[2];if(!input)throw new Error('Pass the CC0 Quaternius Eagle.fbx source path');
+globalThis.FileReader=class{readAsArrayBuffer(blob){blob.arrayBuffer().then(value=>{this.result=value;this.onloadend?.();});}readAsDataURL(blob){blob.arrayBuffer().then(value=>{this.result='data:'+blob.type+';base64,'+Buffer.from(value).toString('base64');this.onloadend?.();});}};
+const bytes=fs.readFileSync(input),model=new FBXLoader().parse(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),'');
+model.traverse(o=>{if(o.isMesh){const convert=m=>new T.MeshStandardMaterial({name:m.name,color:m.color??0x5c4531,roughness:1,side:T.DoubleSide});o.material=Array.isArray(o.material)?o.material.map(convert):convert(o.material);if(o.isSkinnedMesh)o.normalizeSkinWeights();const geometry=o.geometry,groups=[...geometry.groups],indices=[];const materials=Array.isArray(o.material)?o.material:[o.material];geometry.clearGroups();for(let materialIndex=0;materialIndex<materials.length;materialIndex++){const start=indices.length;for(const group of groups)if(group.materialIndex===materialIndex)for(let i=group.start;i<group.start+group.count;i++)indices.push(geometry.index?geometry.index.getX(i):i);if(indices.length>start)geometry.addGroup(start,indices.length-start,materialIndex);}geometry.setIndex(indices);o.geometry=mergeVertices(geometry,1e-4);console.log('Optimized bird vertices',o.geometry.attributes.position.count,'material groups',o.geometry.groups.length);}});
+const flight=model.animations.find(c=>c.name.includes('Flying'));if(!flight)throw new Error('Native flight clip missing');flight.name='Flight';const output=await new GLTFExporter().parseAsync(model,{binary:true,animations:[flight]});fs.writeFileSync('public/assets/eagle.glb',Buffer.from(output));console.log('Exported eagle.glb',output.byteLength,'bytes');

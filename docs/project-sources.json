@@ -1,0 +1,114 @@
+[
+  {
+    "repository": "ssboroo/Rainy-Teacher",
+    "path": "README.md",
+    "sha": "bfda7f8112851785a6fc783d236a1a1c11e07894",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/Rainy-pharmacy-AI-kiosk",
+    "path": "README.md",
+    "sha": "bc0495853bff20cbdcf62cb5775378df27b831b3",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/Rainychatbot",
+    "path": "README.md",
+    "sha": "d3b3d8c6360d7332257dc4f6649bb8874af07fd5",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/RainyPDF",
+    "path": "README.md",
+    "sha": "14091f67be697c39f6c6dd798d7194c963c8d316",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/Rainyproptech",
+    "path": "README.md",
+    "sha": "fc63d66df8a68770e9eeac13f8c3e3f049b7c787",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/Rainy-downloader",
+    "path": "README.md",
+    "sha": "40b41c00754ef74098549c619cae3598498bf0b9",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/rainy_llm",
+    "path": "README.md",
+    "sha": "6df9d5f87bc78be8ee58aa6848cba32caceeb109",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/rainy_tts",
+    "path": "README.md",
+    "sha": "9745aa2d1dca082ff526e4ff384ee508262adeeb",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/rainyaivideostudio",
+    "path": "README.md",
+    "sha": "495325677090f8c733daf4e957af476c2b1e2759",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/RAINY-CONNECT",
+    "path": "docs/superpowers/specs/2026-10-12-rainy-connect-search-design.md",
+    "sha": "a12922bb0b67480fd7fea0a33a876160c0eab4a4",
+    "readmeAvailable": false,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/rainy-studio-mobile",
+    "path": "README.md",
+    "sha": "0edbe1d18ced3bc889594f5e83a023124ffa967b",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/mndrop",
+    "path": "README.md",
+    "sha": "3b6166723e1db9b0a76e34f05eb1180cc8dec906",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/rainy.studio",
+    "path": "README.md",
+    "sha": "d059501711bf9ce0db1dd396f8600b81eb59e5d9",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/socialtool-store",
+    "path": "README.md",
+    "sha": "29e28eb74c1b895ba572802bdc2194c33fd08079",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/auto-boost-mongolia",
+    "path": "README.md",
+    "sha": "0ccc13c72749db88c5a8c100698a98cb3ccb3136",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  },
+  {
+    "repository": "ssboroo/rainy_kuber",
+    "path": "README.md",
+    "sha": "32715b8fded43e4fc971fda4421d36ac0d68f06b",
+    "readmeAvailable": true,
+    "checked": "2026-10-15"
+  }
+]

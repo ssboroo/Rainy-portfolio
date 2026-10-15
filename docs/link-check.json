@@ -1,0 +1,53 @@
+[
+  {
+    "url": "https://voice.rainy.studio/",
+    "status": 200,
+    "final": "https://voice.rainy.studio/",
+    "title": [
+      "RAINY Voice Studio"
+    ],
+    "contacts": []
+  },
+  {
+    "url": "https://video.rainy.studio/",
+    "status": 200,
+    "final": "https://video.rainy.studio/",
+    "title": [
+      "RAVS — Rainy AI Video Studio"
+    ],
+    "contacts": []
+  },
+  {
+    "url": "https://socialtool.store/",
+    "status": 200,
+    "final": "https://socialtool.store/",
+    "title": [
+      "SOCIALTOOL.STORE — Social Media &amp; AI Tools"
+    ],
+    "contacts": [
+      "mailto:help@socialtool.store)**",
+      "mailto:help@socialtool.store)\\n**Telegram:**",
+      "mailto:help@socialtool.store)**",
+      "mailto:help@socialtool.store)**",
+      "mailto:help@socialtool.store)\\n**Telegram:**"
+    ]
+  },
+  {
+    "url": "https://rainy.studio/",
+    "status": 200,
+    "final": "https://rainy.studio/",
+    "title": [
+      "RAINY Studio — Төсөөллөө амилуул"
+    ],
+    "contacts": []
+  },
+  {
+    "url": "https://auto-boost-mongolia.vercel.app/",
+    "status": 200,
+    "final": "https://auto-boost-mongolia.vercel.app/",
+    "title": [
+      "BOOST.MN — Multi-Channel Ads"
+    ],
+    "contacts": []
+  }
+]

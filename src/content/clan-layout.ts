@@ -1,0 +1,5 @@
+export type ClanStation={center:{x:number;z:number};door:{x:number;z:number};approach:{x:number;z:number};yaw:number};
+export function clanStation(index:number):ClanStation{const ring=Math.floor(index/8),angle=(index%8+.5)*Math.PI/4+(ring?.18:0),radius=ring===0?26:45+(ring-1)*22;const center={x:Math.sin(angle)*radius,z:6+Math.cos(angle)*radius};return{center,door:{x:center.x,z:center.z-3.65},approach:{x:center.x,z:center.z-6.1},yaw:0};}
+let householdCenters=Array.from({length:16},(_,i)=>clanStation(i).center);
+export function setHouseholdCenters(centers:{x:number;z:number}[]){householdCenters=centers;}
+export function clanPathDistance(x:number,z:number){const zz=z-6,r=Math.hypot(x,zz);let d=Math.min(Math.abs(r-18),Math.abs(r-37));for(let i=0;i<8;i++){const angle=(i+.5)*Math.PI/4,along=x*Math.sin(angle)+zz*Math.cos(angle);if(along>5&&along<48)d=Math.min(d,Math.abs(x*Math.cos(angle)-zz*Math.sin(angle)));}for(const c of householdCenters){if(z<c.z-3.4&&z>c.z-8)d=Math.min(d,Math.abs(x-c.x));}return d;}

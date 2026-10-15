@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.superpowers/
+
+.sites-runtime/
+.wrangler/
+.vinext/
+.next/
+.env*
+.client-build/
+public/client/
+app/portfolio-html.ts

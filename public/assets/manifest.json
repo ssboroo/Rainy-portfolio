@@ -1,0 +1,127 @@
+[
+  {
+    "path": "/assets/boulder.glb",
+    "bytes": 33420,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/boulder-diff.jpg",
+    "bytes": 987467,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/boulder-nor_gl.jpg",
+    "bytes": 1183552,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/boulder-arm.jpg",
+    "bytes": 659386,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/project-illustrations.webp",
+    "bytes": 516422,
+    "type": "image/webp"
+  },
+  {
+    "path": "/assets/mongolia-flag.svg",
+    "bytes": 2142,
+    "type": "image/svg+xml"
+  },
+  {
+    "path": "/assets/eagle.glb",
+    "bytes": 2605656,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/meadow-color.jpg",
+    "bytes": 1195394,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/meadow-normal.jpg",
+    "bytes": 1466049,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/meadow-rough.jpg",
+    "bytes": 511385,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/folio-life.webp",
+    "bytes": 654356,
+    "type": "image/webp"
+  },
+  {
+    "path": "/assets/horse.glb",
+    "bytes": 12398496,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/herd-cow.glb",
+    "bytes": 615384,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/herd-sheep.glb",
+    "bytes": 482680,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/herd-horse.glb",
+    "bytes": 569800,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/rider.glb",
+    "bytes": 6628324,
+    "type": "model/gltf-binary"
+  },
+  {
+    "path": "/assets/ground-color.jpg",
+    "bytes": 666655,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/ground-normal.jpg",
+    "bytes": 904956,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/dirt-color.jpg",
+    "bytes": 1206953,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/ger-wood.jpg",
+    "bytes": 235098,
+    "type": "image/jpeg"
+  },
+  {
+    "path": "/assets/throat-chant.mp3",
+    "bytes": 705069,
+    "type": "audio/mpeg"
+  },
+  {
+    "path": "/assets/font-manrope.ttf",
+    "bytes": 164700,
+    "type": "font/ttf"
+  },
+  {
+    "path": "/assets/font-noto.ttf",
+    "bytes": 2049096,
+    "type": "font/ttf"
+  },
+  {
+    "path": "/assets/font-script.ttf",
+    "bytes": 403648,
+    "type": "font/ttf"
+  },
+  {
+    "path": "/assets/font-serif.ttf",
+    "bytes": 212196,
+    "type": "font/ttf"
+  }
+]

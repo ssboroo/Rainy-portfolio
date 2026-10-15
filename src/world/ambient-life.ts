@@ -1,0 +1,10 @@
+import * as T from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {clone} from 'three/addons/utils/SkeletonUtils.js';
+export function eaglePosition(time:number,index:number){const angle=time*.115+(index===0?.6:-1.1);return{x:Math.sin(angle)*(26+index*5),y:8.5+index*2+Math.sin(time*.35+index)*.7,z:13+Math.cos(angle)*(25+index*4),heading:angle+Math.PI/2};}
+export function createEagleFlock(scene:T.Scene,source:T.Group,clip:T.AnimationClip){
+ const previewMixer=new T.AnimationMixer(source);previewMixer.clipAction(clip).play();previewMixer.setTime(0);source.updateMatrixWorld(true);source.traverse(o=>{if(o instanceof T.SkinnedMesh)o.computeBoundingBox();});const bounds=new T.Box3().setFromObject(source),size=bounds.getSize(new T.Vector3()),center=bounds.getCenter(new T.Vector3()),scale=1.9/size.x;previewMixer.stopAllAction();previewMixer.uncacheRoot(source);
+ const birds=Array.from({length:2},(_,index)=>{const root=new T.Group();root.name='Animated Quaternius eagle';scene.add(root);const model=clone(source);model.scale.setScalar(scale);model.position.copy(center).multiplyScalar(-scale);model.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=false;o.receiveShadow=false;o.frustumCulled=false;}});root.add(model);const mixer=new T.AnimationMixer(model);mixer.clipAction(clip).play();mixer.setTime(index*.37);return{root,mixer};});let previous=-1;
+ return{birds,update(time:number,reduced:boolean){for(const bird of birds)bird.root.visible=!reduced;if(reduced||time-previous<1/30)return;previous=time;birds.forEach((bird,index)=>{const p=eaglePosition(time,index);bird.root.position.set(p.x,p.y,p.z);bird.root.rotation.set(0,p.heading,Math.sin(time*.115)*.09);bird.mixer.setTime(time+index*.37);});}};
+}
+export async function createAmbientLife(scene:T.Scene){const gltf=await new GLTFLoader().loadAsync('/assets/eagle.glb');const clip=gltf.animations.find(c=>c.name==='Flight');if(!clip)throw new Error('Eagle flight animation missing');return createEagleFlock(scene,gltf.scene,clip);}
