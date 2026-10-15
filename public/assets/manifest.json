@@ -100,11 +100,6 @@
     "type": "image/jpeg"
   },
   {
-    "path": "/assets/throat-chant.mp3",
-    "bytes": 705069,
-    "type": "audio/mpeg"
-  },
-  {
     "path": "/assets/font-manrope.ttf",
     "bytes": 164700,
     "type": "font/ttf"

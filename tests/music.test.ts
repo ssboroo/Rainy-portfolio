@@ -1,0 +1,4 @@
+// @vitest-environment jsdom
+import {it,expect} from 'vitest';
+import {createMusicPlayer} from '../src/ui/music';
+it('loads the selected YouTube track only after activation and stops on close',()=>{const host=document.createElement('div');document.body.append(host);let active=false;const player=createMusicPlayer(host,value=>active=value);expect(host.querySelector('iframe')).toBeNull();player.setEnabled(true);const frame=host.querySelector('iframe')!;expect(frame.src).toContain('/embed/tTsE8dBd5FU');expect(new URL(frame.src).searchParams.get('playlist')).toBe('tTsE8dBd5FU');expect(frame.width).toBe('356');expect(frame.height).toBe('200');expect(active).toBe(true);expect(host.querySelector('a')!.href).toBe('https://www.youtube.com/watch?v=tTsE8dBd5FU');host.querySelector('button')!.click();expect(host.querySelector('iframe')).toBeNull();expect(active).toBe(false);expect(host.querySelector<HTMLElement>('.music-player')!.hidden).toBe(true);});
