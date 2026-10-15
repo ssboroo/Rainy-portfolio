@@ -1,5 +1,6 @@
 node_modules/
 dist/
+.output/
 .superpowers/
 
 .sites-runtime/
@@ -10,3 +11,5 @@ dist/
 .client-build/
 public/client/
 app/portfolio-html.ts
+
+next-env.d.ts

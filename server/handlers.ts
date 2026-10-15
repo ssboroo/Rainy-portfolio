@@ -1,11 +1,14 @@
 import {authorizeAdmin} from './access';
 import {readContent,writeContent,type ContentBucket} from './content';
 import {visibleProjects} from '../src/content/live';
-export type PortfolioEnv={BUCKET:ContentBucket;ADMIN_EMAIL?:string};
+export type PortfolioEnv={BUCKET:ContentBucket;ADMIN_EMAIL?:string;ADMIN_USER?:string;ADMIN_PASSWORD?:string};
 const reply=(body:unknown,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 export async function publicContent(env:PortfolioEnv){try{const {document}=await readContent(env.BUCKET);return reply({...document,projects:visibleProjects(document)});}catch{return reply({error:'Агуулгыг уншиж чадсангүй.'},503);}}
 export async function adminContent(request:Request,env:PortfolioEnv){
- if(!authorizeAdmin(request,env.ADMIN_EMAIL))return reply({error:'Энэ хэсэгт зөвхөн эзэмшигч нэвтэрнэ.'},403);
+ if(!authorizeAdmin(request,env.ADMIN_EMAIL,env.ADMIN_USER,env.ADMIN_PASSWORD)){
+  const status=env.ADMIN_USER&&env.ADMIN_PASSWORD?401:403;
+  return new Response(JSON.stringify({error:'Энэ хэсэгт зөвхөн эзэмшигч нэвтэрнэ.'}),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...(status===401?{'WWW-Authenticate':'Basic realm="RAINY portfolio admin", charset="UTF-8"'}:{})}});
+ }
  try{
   if(request.method==='GET')return reply((await readContent(env.BUCKET)).document);
   if(request.method!=='PUT')return reply({error:'Method not allowed'},405);

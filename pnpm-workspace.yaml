@@ -2,3 +2,6 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
+minimumReleaseAgeExclude:
+  - vinext@1.2.1
+  - '@vitejs/plugin-rsc@0.5.38'
