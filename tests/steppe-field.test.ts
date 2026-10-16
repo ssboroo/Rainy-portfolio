@@ -9,13 +9,14 @@ it('produces deterministic smooth ground variation with bounded density and mois
 });
 import * as T from 'three';
 import {vi} from 'vitest';
-import {createTerrain} from '../src/world/terrain';
+import {createTerrain,terrainHeight} from '../src/world/terrain';
 it('keeps grass within the existing draw budget and grounds every instance',()=>{
  vi.stubGlobal('matchMedia',()=>({matches:false}));
  const load=vi.spyOn(T.TextureLoader.prototype,'load').mockImplementation(()=>new T.Texture());
  try{const scene=new T.Scene(),terrain=createTerrain(scene);
   const grass=scene.children.filter(o=>o instanceof T.InstancedMesh&&o.geometry.index?.count===terrain.stats.tuftTriangles*3) as T.InstancedMesh[];
   expect(grass.reduce((n,g)=>n+g.count*terrain.stats.tuftTriangles,0)).toBeLessThan(700000);
+  const pose=new T.Matrix4(),position=new T.Vector3();for(const chunk of grass)for(let i=0;i<Math.min(8,chunk.count);i++){chunk.getMatrixAt(i,pose);position.setFromMatrixPosition(pose);expect(position.y).toBeCloseTo(terrainHeight(position.x,position.z)-.025,4);}
   const shader={uniforms:{},vertexShader:'#include <begin_vertex>',fragmentShader:'#include <color_fragment>'};
   (grass[0].material as T.Material).onBeforeCompile(shader as any,{} as any);
   expect(shader.fragmentShader).not.toContain('gl_FragCoord');expect(shader.vertexShader).toContain('vGrassWorld');
